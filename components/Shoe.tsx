@@ -3,12 +3,13 @@ import { SHOE_COLORS, type ShoePalette } from "@/lib/data";
 type ShoeProps = {
   palette?: ShoePalette;
   size?: number;
+  angle?: number;
 };
 
-export function Shoe({ palette = "cream", size = 1 }: ShoeProps) {
+export function Shoe({ palette = "cream", size = 1, angle = 0 }: ShoeProps) {
   const c = SHOE_COLORS[palette] ?? SHOE_COLORS.cream;
   return (
-    <div style={{ width: "100%", height: "100%", display: "grid", placeItems: "center", position: "relative" }}>
+    <div style={{ width: "100%", height: "100%", display: "grid", placeItems: "center", position: "relative", transform: angle ? `rotate(${angle}deg)` : undefined }}>
       <svg
         viewBox="0 0 480 220"
         xmlns="http://www.w3.org/2000/svg"

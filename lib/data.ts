@@ -22,6 +22,11 @@ export const SHOE_COLORS: Record<ShoePalette, { upper: string; accent: string; s
   tan:   { upper: "#C19A6B", accent: "#3A2E20", sole: "#F2EFE9", lace: "#A07F5A" },
 };
 
+export type ProductDetail = {
+  label: string;
+  value: string;
+};
+
 export type Product = {
   id: string;
   brand: string;
@@ -34,6 +39,8 @@ export type Product = {
   cat: string;
   sizes: number[];
   stockSizes: number[];
+  story?: string;
+  details?: ProductDetail[];
 };
 
 export const PRODUCTS: Product[] = [
