@@ -1,124 +1,50 @@
-import { Sneaker } from "./Sneaker";
+const CATS = [
+  { num: "01", title: "Hombre",          count: "62 modelos", href: "/tienda?cat=hombre",   label: "MEN LIFESTYLE · running, retro, low-tops" },
+  { num: "02", title: "Mujer",           count: "38 modelos", href: "/tienda?cat=mujer",    label: "WOMEN LIFESTYLE · low + chunky retro"     },
+  { num: "03", title: "Edición Limitada",count: "12 modelos", href: "/tienda?limitada=true",label: "EDITORIAL · Italian capsules + collabs"    },
+];
 
-export function Bento() {
+export function Categories() {
   return (
-    <section id="bento" style={{ padding: "80px 40px" }}>
-      <div className="reveal" style={{
-        display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        marginBottom: 28,
-      }}>
-        <h2 className="display" style={{ fontSize: "clamp(40px,5vw,72px)", margin: 0 }}>
-          ¿De qué <span style={{ color: "var(--blue)" }}>pila</span> sos?
-        </h2>
-        <div className="mono" style={{ color: "var(--muted)" }}>
-          [02] · 06 CATEGORÍAS · BENTO
-        </div>
-      </div>
-
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(6, 1fr)",
-        gridAutoRows: "180px",
-        gap: 14,
-      }}>
-        {/* Big urban tile — spans 3 cols × 2 rows */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 3", gridRow: "span 2",
-          background: "var(--ink)", color: "var(--bg)",
-        }}>
-          <div className="bcorner" style={{ background: "var(--red)", color: "#fff" }}>↗</div>
-          <div className="sneaker-stripes" />
-          <div style={{ position: "absolute", top: 24, left: 26 }} className="mono">01 · URBANO</div>
-          <div style={{ position: "absolute", bottom: 26, left: 26, right: 26 }}>
-            <div className="display" style={{ fontSize: "clamp(36px,4.4vw,76px)", color: "#fff" }}>
-              Para la calle<br />que vibra.
-            </div>
-            <div className="mono" style={{ marginTop: 18, opacity: 0.7 }}>
-              48 MODELOS · DESDE $145.000
-            </div>
+    <section className="section">
+      <div className="wrap">
+        <div className="sec-head reveal">
+          <div>
+            <span className="eyebrow">·· Categorías ··</span>
+            <h2>Encuentra<br />lo tuyo.</h2>
           </div>
-          <div style={{ position: "absolute", top: 14, right: 60, width: "46%", opacity: 0.95 }}>
-            <Sneaker tone="red" angle="a" />
+          <div className="right">
+            <a href="/tienda" className="btn btn-ghost">Ver todas las categorías</a>
           </div>
         </div>
 
-        {/* Running tile */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 3", gridRow: "span 1",
-          background: "var(--paper)",
-        }}>
-          <div className="bcorner">02</div>
-          <div style={{ display: "flex", height: "100%" }}>
-            <div style={{ padding: "24px 26px", flex: 1 }}>
-              <div className="mono" style={{ color: "var(--muted)" }}>RUNNING</div>
-              <div className="display" style={{ fontSize: 36, marginTop: 8 }}>
-                Aguante<br />en cada km.
+        <div className="cat-grid">
+          {CATS.map((c) => (
+            <a key={c.num} href={c.href} className="cat-card reveal" style={{ display: "block" }}>
+              {/* Striped placeholder */}
+              <div className="ph ph-dark" style={{ position: "absolute", inset: 0 }}>
+                <span className="ph-tag">{c.label}</span>
               </div>
-            </div>
-            <div style={{ width: "45%", position: "relative" }}>
-              <Sneaker tone="bone" angle="b" />
-            </div>
-          </div>
-        </div>
 
-        {/* Exclusive drops tile */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 3", gridRow: "span 1",
-          background: "var(--red)", color: "#fff",
-        }}>
-          <div className="bcorner" style={{ background: "#fff", color: "var(--red)" }}>03</div>
-          <div className="sneaker-stripes" />
-          <div style={{ padding: "24px 26px" }}>
-            <div className="mono" style={{ opacity: 0.85 }}>LANZAMIENTOS EXCLUSIVOS</div>
-            <div className="display" style={{ fontSize: 40, marginTop: 8, color: "#fff" }}>
-              Sólo viernes,<br />sólo 200 pares.
-            </div>
-            <div className="mono" style={{ marginTop: 14, opacity: 0.85 }}>SUSCRIBITE AL DROP →</div>
-          </div>
-        </div>
+              {/* Overlay text */}
+              <div className="cat-card-body">
+                <div className="cat-card-num">{c.num} / 03</div>
+                <div className="cat-card-title">{c.title}</div>
+                <div className="cat-card-count">{c.count}</div>
+              </div>
 
-        {/* Skate tile */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 2", gridRow: "span 1",
-          background: "var(--blue)", color: "#fff",
-        }}>
-          <div className="bcorner" style={{ background: "#fff", color: "var(--blue)" }}>04</div>
-          <div style={{ padding: "24px 26px" }}>
-            <div className="mono" style={{ opacity: 0.85 }}>SKATE</div>
-            <div className="display" style={{ fontSize: 30, marginTop: 8, color: "#fff" }}>
-              Para caer<br />parado.
-            </div>
-          </div>
-        </div>
-
-        {/* Heritage tile */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 2", gridRow: "span 1",
-          background: "var(--paper)",
-        }}>
-          <div className="bcorner">05</div>
-          <div style={{ padding: "24px 26px" }}>
-            <div className="mono" style={{ color: "var(--muted)" }}>HERITAGE</div>
-            <div className="display" style={{ fontSize: 30, marginTop: 8 }}>
-              Clásicos<br />recargados.
-            </div>
-          </div>
-        </div>
-
-        {/* Mujer tile */}
-        <div className="bento reveal" data-hover style={{
-          gridColumn: "span 2", gridRow: "span 1",
-          background: "var(--paper)", border: "1px dashed var(--ink)",
-        }}>
-          <div className="bcorner">06</div>
-          <div style={{ padding: "24px 26px" }}>
-            <div className="mono" style={{ color: "var(--muted)" }}>MUJER · NUEVO</div>
-            <div className="display" style={{ fontSize: 30, marginTop: 8 }}>
-              Línea<br />recién enchufada.
-            </div>
-          </div>
+              {/* CTA reveal on hover */}
+              <div className="cat-card-cta">
+                <span>Ver colección</span>
+                <span>→</span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+/* keep default export alias so old imports still work */
+export { Categories as Bento };

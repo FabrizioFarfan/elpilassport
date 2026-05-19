@@ -1,57 +1,76 @@
+const ANNOUNCEMENT_ITEMS = [
+  "Envío gratis a todo Perú en compras +S/ 400",
+  "100% Originales · Importadas de Europa",
+  "Recoge en tienda · Centro de Ica",
+  "Atención WhatsApp +51 956 000 000",
+];
+
+const NAV_LINKS = [
+  { label: "Hombre",       href: "/tienda?cat=hombre"  },
+  { label: "Mujer",        href: "/tienda?cat=mujer"   },
+  { label: "Marcas",       href: "/tienda?marcas=true" },
+  { label: "Novedades",    href: "/tienda?drops=true"  },
+  { label: "Tienda física",href: "/#tienda-fisica"     },
+];
+
 export function Nav() {
   return (
-    <header style={{
-      position: "sticky", top: 0, zIndex: 50,
-      display: "flex", alignItems: "center", justifyContent: "space-between",
-      padding: "20px 40px",
-      background: "color-mix(in oklab, var(--bg) 86%, transparent)",
-      backdropFilter: "blur(14px)",
-      WebkitBackdropFilter: "blur(14px)",
-      borderBottom: "1px solid var(--line)",
-    }}>
-      {/* Logo */}
-      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <div style={{
-          width: 38, height: 38, borderRadius: "50%",
-          background: "#fff", display: "grid", placeItems: "center",
-          overflow: "hidden", border: "1px solid var(--line)",
-        }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.jpeg" alt="Pilas Sport" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-        <div style={{ lineHeight: 1 }}>
-          <div style={{ fontFamily: "var(--font-caveat, 'Caveat', cursive)", fontSize: 24, color: "var(--blue)", fontWeight: 600 }}>
-            Pilas
-          </div>
-          <div style={{ fontFamily: "var(--font-syne, 'Syne', sans-serif)", fontWeight: 700, fontSize: 14, letterSpacing: "-.01em", marginTop: -2 }}>
-            SPORT
-          </div>
-        </div>
-      </div>
-
-      {/* Nav links */}
-      <nav style={{ display: "flex", gap: 36 }} className="mono">
-        {["Tienda", "Drops 026", "Categorías", "Journal", "Contacto"].map((item) => (
-          <a key={item} href="#" className="ulink">{item}</a>
+    <>
+      {/* Announcement */}
+      <div className="announcement">
+        {ANNOUNCEMENT_ITEMS.map((t, i) => (
+          <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 24 }}>
+            {t}
+            {i < ANNOUNCEMENT_ITEMS.length - 1 && <span className="dot" />}
+          </span>
         ))}
-      </nav>
-
-      {/* Actions */}
-      <div style={{ display: "flex", alignItems: "center", gap: 18 }} className="mono">
-        <a href="#" className="ulink">Buscar</a>
-        <a href="#" className="ulink">Cuenta</a>
-        <a href="#" data-hover style={{
-          display: "inline-flex", alignItems: "center", gap: 8,
-          padding: "8px 14px", border: "1px solid var(--ink)", borderRadius: 999,
-        }}>
-          Bolsa
-          <span style={{
-            width: 18, height: 18, borderRadius: "50%",
-            background: "var(--red)", color: "#fff",
-            display: "grid", placeItems: "center", fontSize: 10,
-          }}>2</span>
-        </a>
       </div>
-    </header>
+
+      {/* Navbar */}
+      <header className="nav">
+        <div className="nav-row">
+          {/* Logo */}
+          <a href="/" className="nav-logo">
+            <div className="nav-logo-img">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.jpeg" alt="Pilas Sport logo" />
+            </div>
+            PILAS<span className="dot-accent">·</span>SPORT
+          </a>
+
+          {/* Links */}
+          <nav className="nav-links">
+            {NAV_LINKS.map((l) => (
+              <a key={l.label} href={l.href} className="nav-link">
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="nav-actions">
+            <button className="nav-icon" title="Buscar" aria-label="Buscar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-3.5-3.5"/>
+              </svg>
+            </button>
+            <button className="nav-icon" title="Mi cuenta" aria-label="Mi cuenta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+              </svg>
+            </button>
+            <button className="nav-icon" title="Carrito" aria-label="Carrito">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M5 7h14l-1 13H6L5 7Z"/>
+                <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
+              </svg>
+              <span className="nav-badge">0</span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }

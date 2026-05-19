@@ -1,43 +1,60 @@
-export function Manifesto() {
+export function Editorial() {
   return (
-    <section style={{ padding: "90px 40px", background: "var(--ink)", color: "var(--bg)" }}>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 2fr",
-        gap: 60,
-        alignItems: "start",
-      }}>
-        <div className="reveal">
-          <div className="mono" style={{ color: "var(--red)", marginBottom: 18 }}>[04] · MANIFIESTO</div>
-          <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-            <span style={{ width: 14, height: 14, borderRadius: "50%", background: "var(--red)", display: "inline-block" }} />
-            <span style={{ width: 14, height: 14, borderRadius: "50%", background: "var(--blue)", display: "inline-block" }} />
-            <span style={{ width: 14, height: 14, borderRadius: "50%", background: "var(--bg)", display: "inline-block" }} />
-            <span className="mono" style={{ opacity: 0.6 }}>3 colores · 1 actitud</span>
+    <section className="section" style={{ background: "var(--bone-warm)" }}>
+      <div className="wrap">
+        <div className="edito">
+          {/* Media */}
+          <div className="edito-media reveal">
+            <div className="ph ph-dark" style={{ width: "100%", height: "100%" }}>
+              <span className="ph-tag">EDITORIAL · founder in Milano · 1080×1440 portrait</span>
+            </div>
+            <div style={{
+              position: "absolute", left: 18, top: 18,
+              padding: "8px 12px",
+              background: "var(--bone)",
+              fontFamily: "var(--mono)", fontSize: 10,
+              letterSpacing: "0.14em", textTransform: "uppercase",
+            }}>
+              Milano · Via Tortona · Mar 2026
+            </div>
           </div>
-        </div>
 
-        <div
-          className="reveal display"
-          style={{
-            fontSize: "clamp(28px,3.4vw,52px)",
-            letterSpacing: "-.02em",
-            lineHeight: 1.05,
-            color: "var(--bg)",
-          }}
-        >
-          Somos para los que{" "}
-          <span style={{ color: "var(--red)" }}>se enchufan</span>{" "}
-          a la ciudad. Pisamos andén, cancha, asfalto y escenario.{" "}
-          <span style={{
-            fontFamily: "var(--font-caveat, 'Caveat', cursive)",
-            color: "var(--bg)", fontWeight: 600, fontStyle: "italic",
-          }}>
-            Pilas, causa —
-          </span>{" "}
-          el drop arranca el viernes.
+          {/* Body */}
+          <div className="edito-body reveal">
+            <span className="eyebrow">·· Nuestra historia ··</span>
+            <h2>De Milán<br />a Ica,<br />sin intermediarios.</h2>
+
+            <p>
+              Después de cinco años viviendo en Italia, abrí PilasSport en el
+              centro de Ica con una idea simple: traer las zapatillas que la
+              gente buscaba sin tener que viajar a Lima ni jugársela con webs
+              random.
+            </p>
+            <p>
+              Cada par lo elijo personalmente en tiendas autorizadas y boutiques
+              europeas. Llegan en mi maleta, no en un container con réplicas.
+              Eso es lo que nos diferencia.
+            </p>
+
+            <blockquote className="edito-quote">
+              "Lo que ves en la web es lo mismo que ves en mi tienda.
+              Y lo mismo que vi yo en Italia."
+            </blockquote>
+
+            <div className="edito-sign">
+              <div className="edito-sign-avatar">
+                <div className="ph ph-dark" style={{ width: "100%", height: "100%" }} />
+              </div>
+              <div>
+                <div className="edito-sign-name">[Nombre del fundador]</div>
+                <div className="edito-sign-role">Fundador · PilasSport</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+export { Editorial as Manifesto };
