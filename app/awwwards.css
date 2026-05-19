@@ -1299,4 +1299,5 @@ body[data-edition="awwwards"] .cart-line-brand { font-family: var(--awa-mono); l
 body[data-edition="awwwards"] .cart-line-img { background: var(--awa-cream); }
 body[data-edition="awwwards"] .toast { background: var(--awa-ink); font-family: var(--awa-mono); letter-spacing: 0.18em; }
 body[data-edition="awwwards"] [data-cursor], body[data-edition="awwwards"] button, body[data-edition="awwwards"] a { cursor: none; }
-body[data-edition="awwwards"] .nav-row { height: 76px; }
+body[data-edition="awwwards"] .nav-row { height: 96px; }
+body[data-edition="awwwards"] .nav-logo-img { width: 85px; height: 85px; border-radius: 50%; }
