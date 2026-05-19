@@ -1,0 +1,358 @@
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — covers all pages, all sections
+   Breakpoints: 1280px / 1024px / 768px / 480px
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1280px large tablet ──────────────────────────────────────── */
+@media (max-width: 1280px) {
+  :root { --gutter: 36px; }
+  body[data-edition="awwwards"] { --gutter: 36px; }
+
+  .awa-foot-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+  .awa-foot-grid > div:nth-child(4),
+  .awa-foot-grid > div:nth-child(5) { grid-column: auto; }
+
+  .awa-hero-type { font-size: clamp(80px, 11vw, 180px); }
+  .awa-cats-title { font-size: clamp(56px, 8vw, 120px); }
+  .awa-gallery-intro h2 { font-size: clamp(56px, 8vw, 120px); }
+  .awa-story-title { font-size: clamp(56px, 7vw, 100px); }
+  .awa-drops-head h2 { font-size: clamp(56px, 7vw, 100px); }
+  .awa-news h2 { font-size: clamp(56px, 8vw, 120px); }
+}
+
+/* ── 1024px tablet ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --gutter: 28px; }
+  body[data-edition="awwwards"] { --gutter: 28px; }
+
+  .wrap, .wrap-wide { padding: 0 28px; }
+
+  /* ── Announcement ── */
+  .announcement { gap: 12px; font-size: 10px; padding: 8px 28px; }
+  .announcement > span:nth-child(n+3) { display: none; }
+
+  /* ── Nav ── */
+  .nav-links { display: none; }
+  .nav-row {
+    grid-template-columns: 1fr auto;
+    padding: 0 28px;
+  }
+  body[data-edition="awwwards"] .nav-row { height: 80px; }
+  body[data-edition="awwwards"] .nav-logo-img { width: 60px; height: 60px; }
+
+  /* ── AWA Hero ── */
+  .awa-hero { padding: 80px 28px 80px; }
+  .awa-hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 32px;
+  }
+  .awa-hero-shoe-stage { height: 52vw; max-height: 460px; }
+  .awa-hero-type { font-size: clamp(72px, 12vw, 160px); }
+  .awa-hero-meta-bl { left: 28px; }
+  .awa-hero-scroll { right: 28px; }
+
+  /* ── AWA Brands — kill the pin, show as stacked panels ── */
+  .awa-brands-pin { height: auto; }
+  .awa-brands-sticky { position: static; height: auto; overflow: visible; }
+  .awa-brands-track {
+    transform: none !important;
+    flex-direction: column;
+    height: auto;
+  }
+  .awa-brands-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    border-right: none;
+    border-bottom: 1px solid var(--awa-ink);
+    padding: 80px 28px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .awa-brand-num { position: static; margin-bottom: 28px; grid-column: 1/-1; }
+  .awa-brand-counter { position: static; margin-top: 28px; grid-column: 1/-1; }
+  .awa-brand-shoe { height: 42vw; max-height: 380px; }
+  .awa-brands-progress { display: none; }
+
+  /* ── AWA Categories ── */
+  .awa-cats { padding: 100px 28px 80px; }
+  .awa-cats-head { flex-direction: column; gap: 20px; margin-bottom: 48px; }
+  .awa-cat-row.row-1,
+  .awa-cat-row.row-2,
+  .awa-cat-row.row-3 { grid-template-columns: 1fr; margin-bottom: 60px; }
+  .awa-cat-row.row-2 { direction: ltr; }
+  .awa-cat-num { font-size: clamp(72px, 12vw, 140px) !important; }
+  .awa-cat-info { align-items: flex-start; text-align: left; padding: 16px 0; }
+
+  /* ── AWA Gallery rooms ── */
+  .awa-gallery-intro { padding: 80px 28px 40px; gap: 32px; }
+  .awa-gallery-room {
+    grid-template-columns: 1fr;
+    padding: 60px 28px;
+    min-height: auto;
+    gap: 32px;
+  }
+  .awa-gallery-room:nth-child(even) { direction: ltr; }
+  .awa-gallery-body { padding: 0; }
+  .awa-gallery-media { aspect-ratio: 4/3; }
+  .awa-gallery-body h3 { font-size: clamp(40px, 8vw, 72px); }
+
+  /* ── AWA Story ── */
+  .awa-story { padding: 100px 28px; }
+  .awa-story-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  .awa-story-title { font-size: clamp(48px, 9vw, 96px); }
+  .awa-story-col { max-width: 100%; }
+  .awa-story-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 48px 0 80px;
+  }
+  .awa-story-img:nth-child(1) { grid-column: 1/2; aspect-ratio: 1; margin-top: 0; }
+  .awa-story-img:nth-child(2) { grid-column: 2/3; aspect-ratio: 1; }
+  .awa-story-img:nth-child(3) { grid-column: 1/3; aspect-ratio: 21/9; margin-top: 0; }
+  .awa-counters { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .awa-pullquote { font-size: clamp(28px, 4.5vw, 56px); margin: 60px auto; }
+
+  /* ── AWA Drops bento ── */
+  .awa-drops { padding: 100px 28px; }
+  .awa-drops-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
+  .awa-bento {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+    gap: 12px;
+  }
+  .awa-bento-cell.s-3 { grid-column: span 3; }
+  .awa-bento-cell.s-4 { grid-column: span 3; }
+  .awa-bento-cell.s-5 { grid-column: span 3; }
+  .awa-bento-cell.s-7 { grid-column: span 6; }
+
+  /* ── AWA Store ── */
+  .awa-store { height: auto; min-height: 100vh; }
+  .awa-store-hud {
+    position: absolute;
+    inset: 48px 28px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 24px;
+  }
+  .awa-store-hud .hud-coords { display: none; }
+  .awa-store-hud .hud-title { font-size: clamp(48px, 8vw, 96px); }
+  .awa-store-hud .hud-info { max-width: 100%; margin-left: 0; }
+  .awa-store-hud .hud-bottom { padding-top: 20px; }
+
+  /* ── AWA Footer ── */
+  .awa-foot { padding: 60px 28px 0; }
+  .awa-foot-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .awa-foot-grid > div:first-child { grid-column: 1/-1; }
+  .awa-foot-wordmark { font-size: clamp(72px, 14vw, 240px); }
+
+  /* ── PLP ── */
+  .plp-head { padding: 48px 0 36px; }
+  .plp-title-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .plp-title-row p { max-width: 100%; }
+  .plp-body { grid-template-columns: 1fr; }
+  .filters { display: none; }
+  .plp-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+  .plp-grid.dense { grid-template-columns: repeat(3, 1fr); }
+
+  /* ── PDP ── */
+  .pdp-grid { grid-template-columns: 1fr; gap: 40px; }
+  .pdp-gallery { position: static; }
+  .pdp-sizes-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* ── 768px mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --gutter: 20px; }
+  body[data-edition="awwwards"] { --gutter: 20px; }
+
+  .wrap, .wrap-wide { padding: 0 20px; }
+
+  /* ── Announcement ── */
+  .announcement { padding: 8px 20px; gap: 0; }
+  .announcement > span:not(:first-child) { display: none; }
+
+  /* ── Nav ── */
+  .nav-row { padding: 0 20px; height: 64px; }
+  body[data-edition="awwwards"] .nav-row { height: 68px; }
+  body[data-edition="awwwards"] .nav-logo-img { width: 48px; height: 48px; }
+  body[data-edition="awwwards"] .nav-logo { font-size: 15px; gap: 8px; }
+  .nav-actions { gap: 4px; }
+  .nav-icon { width: 36px; height: 36px; }
+
+  /* ── Loader ── */
+  .awa-loader { padding: 28px 20px; }
+  .awa-loader-num { font-size: clamp(120px, 32vw, 300px); }
+
+  /* ── AWA Hero ── */
+  .awa-hero { padding: 60px 20px 100px; }
+  .awa-hero-type { font-size: clamp(60px, 19vw, 120px); line-height: 0.88; }
+  .awa-hero-shoe-stage { height: 55vw; min-height: 220px; max-height: 360px; }
+  .awa-hero-corner-tl { right: 20px; top: 6px; font-size: 9px; }
+  .awa-hero-meta-bl { left: 20px; bottom: 20px; font-size: 9px; gap: 2px; }
+  .awa-hero-scroll { right: 20px; bottom: 20px; font-size: 9px; }
+  .awa-hero-scroll::after { height: 40px; }
+
+  /* ── AWA Marquee ── */
+  .awa-marquee-track { gap: 40px; }
+  .awa-marquee-word { font-size: clamp(72px, 22vw, 140px); gap: 36px; }
+  .awa-marquee-word::after { font-size: 28px; }
+
+  /* ── AWA Brands ── */
+  .awa-brands-panel {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 60px 20px;
+  }
+  .awa-brand-logo { font-size: clamp(40px, 13vw, 80px); }
+  .awa-brand-shoe { height: 50vw; min-height: 200px; }
+
+  /* ── AWA Cats ── */
+  .awa-cats { padding: 72px 20px 48px; }
+  .awa-cats-head { margin-bottom: 32px; }
+  .awa-cats-title { font-size: clamp(44px, 13vw, 80px); }
+  .awa-cat-num { font-size: clamp(56px, 18vw, 110px) !important; }
+  .awa-cat-row { margin-bottom: 48px; }
+  .awa-cat-img { aspect-ratio: 4/3; }
+  .awa-cat-info-title { font-size: 22px; }
+
+  /* ── AWA Gallery ── */
+  .awa-gallery-intro { padding: 60px 20px 28px; flex-direction: column; align-items: flex-start; }
+  .awa-gallery-intro h2 { font-size: clamp(44px, 13vw, 80px); }
+  .awa-gallery-room { padding: 48px 20px; gap: 20px; }
+  .awa-gallery-body h3 { font-size: clamp(32px, 10vw, 60px); }
+  .awa-gallery-body .desc { font-size: 15px; max-width: 100%; }
+  .awa-gallery-body .price { font-size: 30px; }
+  .awa-gallery-body { padding: 0; }
+  .awa-sizes-strip { gap: 4px; }
+  .awa-size-chip { width: 38px; height: 38px; font-size: 11px; }
+
+  /* ── AWA Story ── */
+  .awa-story { padding: 72px 20px; }
+  .awa-story-eyebrow { margin-bottom: 36px; }
+  .awa-story-title { font-size: clamp(40px, 12vw, 72px); }
+  .awa-story-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 40px 0 60px;
+  }
+  .awa-story-img:nth-child(3) { display: none; }
+  .awa-counters { grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 32px; }
+  .awa-counter-val { font-size: clamp(40px, 12vw, 72px); }
+  .awa-pullquote { font-size: clamp(22px, 7vw, 36px); margin: 40px auto; padding: 0 16px; }
+
+  /* ── AWA Drops ── */
+  .awa-drops { padding: 72px 20px; }
+  .awa-drops-head h2 { font-size: clamp(44px, 13vw, 80px); }
+  .awa-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+    gap: 8px;
+  }
+  .awa-bento-cell.s-3 { grid-column: span 1; }
+  .awa-bento-cell.s-4 { grid-column: span 1; }
+  .awa-bento-cell.s-5 { grid-column: span 1; }
+  .awa-bento-cell.s-7 { grid-column: span 2; }
+  .awa-bento-cell.s-tall { grid-row: span 2; }
+  .awa-bento-cell.editorial .editorial-h { font-size: clamp(24px, 7vw, 40px); }
+  .awa-bento-name { font-size: 12px; }
+  .awa-bento-price { font-size: 11px; }
+
+  /* ── AWA Store ── */
+  .awa-store-hud { inset: 32px 20px; gap: 16px; }
+  .awa-store-hud .hud-title { font-size: clamp(36px, 11vw, 72px); }
+  .awa-store-hud .hud-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    font-size: 12px;
+  }
+  .awa-store-hud .hud-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .awa-store-hud .hud-photo { width: 100%; max-width: 220px; }
+  .awa-store-cta { font-size: 11px; padding: 14px 20px; }
+
+  /* ── AWA Newsletter ── */
+  .awa-news { padding: 80px 20px; }
+  .awa-news h2 { font-size: clamp(44px, 14vw, 88px); }
+  .awa-news-form { max-width: 100%; }
+  .awa-news-form-row { flex-direction: column; align-items: stretch; gap: 12px; border-bottom: 0; }
+  .awa-news-form-row input {
+    border-bottom: 1px solid rgba(242,240,235,0.4);
+    padding-bottom: 12px;
+    font-size: 16px;
+  }
+  .awa-news-form button { align-self: flex-start; }
+
+  /* ── AWA Footer ── */
+  .awa-foot { padding: 48px 20px 0; }
+  .awa-foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .awa-foot-grid > div:first-child { grid-column: 1/-1; }
+  .awa-foot-wordmark {
+    font-size: clamp(44px, 16vw, 120px);
+    margin: 24px -4px 0;
+    padding-bottom: 16px;
+  }
+  .awa-foot-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .awa-foot-clock strong { font-size: 22px; }
+
+  /* ── PLP ── */
+  .plp-head { padding: 32px 0 28px; }
+  .plp-title-row h1 { font-size: clamp(32px, 11vw, 60px); }
+  .plp-title-row p { font-size: 14px; }
+  .plp-toolbar { flex-wrap: wrap; gap: 10px; }
+  .plp-sort { gap: 8px; flex-wrap: wrap; }
+  .plp-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 8px; }
+  .plp-grid.dense { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── PDP ── */
+  .pdp { padding: 28px 0 0; }
+  .pdp-gallery { grid-template-columns: 52px 1fr; gap: 8px; }
+  .pdp-thumbs { gap: 6px; }
+  .pdp-thumb { width: 52px; }
+  .pdp-sizes-grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .pdp-add-row { flex-wrap: wrap; }
+  .pdp-fav-btn { flex: 1; min-width: 52px; max-width: 52px; }
+  .pdp-color-swatches { gap: 6px; }
+  .pdp-swatch { width: 52px; height: 52px; }
+  .pdp-title { font-size: clamp(24px, 7vw, 40px); }
+}
+
+/* ── 480px small phones ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Hero */
+  .awa-hero-type { font-size: clamp(52px, 20vw, 90px); }
+
+  /* Brands */
+  .awa-brands-panel { padding: 48px 20px; }
+  .awa-brand-logo { font-size: clamp(36px, 14vw, 64px); }
+
+  /* Gallery */
+  .awa-gallery-room { padding: 36px 20px; }
+
+  /* Drops bento — stack on very small */
+  .awa-bento { grid-auto-rows: 160px; }
+  .awa-bento-cell.s-5:first-child { grid-column: span 2; }
+
+  /* Footer */
+  .awa-foot-grid { grid-template-columns: 1fr; }
+  .awa-foot-wordmark { font-size: clamp(36px, 16vw, 80px); }
+
+  /* PLP grid */
+  .plp-grid { grid-template-columns: 1fr; gap: 24px; }
+  .plp-grid.dense { grid-template-columns: repeat(2, 1fr); }
+
+  /* PDP */
+  .pdp-grid { gap: 24px; }
+  .pdp-gallery { grid-template-columns: 44px 1fr; }
+  .pdp-sizes-grid { grid-template-columns: repeat(3, 1fr); }
+}

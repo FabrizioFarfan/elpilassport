@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Bodoni_Moda, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./awwwards.css";
+import "./responsive.css";
 import { AWACursor } from "@/components/AWACursor";
 
 const anton = Anton({
