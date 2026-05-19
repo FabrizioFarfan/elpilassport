@@ -1,31 +1,31 @@
-import { Nav }          from "@/components/Nav";
-import { Hero }         from "@/components/Hero";
-import { BigMarquee }   from "@/components/BigMarquee";
-import { Categories }   from "@/components/Bento";
-import { Bestsellers }  from "@/components/Showcase";
-import { Editorial }    from "@/components/Manifesto";
-import { Drops }        from "@/components/Drops";
-import { TiendaFisica } from "@/components/TiendaFisica";
-import { TrustStrip }   from "@/components/TrustStrip";
-import { Newsletter }   from "@/components/Newsletter";
-import { Footer }       from "@/components/Footer";
+import { Nav }        from "@/components/Nav";
+import { AWALoader }  from "@/components/AWALoader";
+import { AWAHero }    from "@/components/AWAHero";
+import { AWAMarquee } from "@/components/AWAMarquee";
+import { AWABrands }  from "@/components/AWABrands";
+import { AWACats }    from "@/components/AWACats";
+import { AWAGallery } from "@/components/AWAGallery";
+import { AWAStory }   from "@/components/AWAStory";
+import { AWADrops }   from "@/components/AWADrops";
+import { AWAStore }   from "@/components/AWAStore";
+import { AWANews }    from "@/components/AWANews";
+import { AWAFooter }  from "@/components/AWAFooter";
 
 export default function Home() {
   return (
-    <div className="page">
+    <>
+      <AWALoader />
       <Nav />
-      <Hero />
-      <BigMarquee />
-      <hr className="rule" />
-      <Categories />
-      <hr className="rule" />
-      <Bestsellers />
-      <Editorial />
-      <Drops />
-      <TiendaFisica />
-      <TrustStrip />
-      <Newsletter />
-      <Footer />
-    </div>
+      <AWAHero />
+      <AWAMarquee />
+      <AWABrands />
+      <AWACats />
+      <AWAGallery />
+      <AWAStory />
+      <AWADrops />
+      <AWAStore />
+      <AWANews />
+      <AWAFooter />
+    </>
   );
 }

@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
+import { Anton, Bodoni_Moda, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Cursor } from "@/components/Cursor";
-import { RevealInit } from "@/components/RevealInit";
+import "./awwwards.css";
+import { AWACursor } from "@/components/AWACursor";
 
-const archivoblack = Archivo_Black({
-  variable: "--font-display",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
   weight: "400",
 });
 
-const inter = Inter({
-  variable: "--font-body",
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
+
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -34,13 +41,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${archivoblack.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${anton.variable} ${bodoniModa.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
     >
-      <body>
-        <div className="cursor-ring" />
-        <div className="cursor-dot" />
-        <Cursor />
-        <RevealInit />
+      <body data-edition="awwwards">
+        <AWACursor />
         {children}
       </body>
     </html>
